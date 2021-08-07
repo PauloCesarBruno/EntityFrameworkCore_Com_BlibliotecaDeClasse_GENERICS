@@ -1,5 +1,3 @@
-using System;
-
 namespace LivrariaControleEmprestimo.WEB.Models
 {
     public class ErrorViewModel
