@@ -21,25 +21,33 @@ namespace LivrariaControleEmprestimo.DATA.Models
 
         [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column("livroNome")]
+        [Display(Name ="Nome Livro")]
         [StringLength(50)]
         public string LivroNome { get; set; }
 
 
         [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column("livroAutor")]
+        [Display(Name = "Autor")]
         [StringLength(200)]
         public string LivroAutor { get; set; }
 
 
         [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column("livroEditora")]
+        [Display(Name = "Editora")]
         [StringLength(100)]
         public string LivroEditora { get; set; }
 
 
+        [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column("livroAnoPublicacao", TypeName = "datetime")]
+        [Display(Name = "Data de Publicação")]
+        [DataType(DataType.Date)]
         public DateTime LivroAnoPublicacao { get; set; }
+
         [Column("livroEdicao")]
+        [Display(Name = "Edição")]
         [StringLength(50)]
         public string LivroEdicao { get; set; }
 
