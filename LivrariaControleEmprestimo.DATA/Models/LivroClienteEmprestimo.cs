@@ -20,14 +20,19 @@ namespace LivrariaControleEmprestimo.DATA.Models
         public int? LceIdLivro { get; set; }
 
 
+        [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column(TypeName = "datetime")]
+        [Display(Name = "Data de Retirada")]
         public DateTime? LceDataEmprestimo { get; set; }
 
 
+        [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column(TypeName = "datetime")]
+        [Display(Name = "Data de Entrga")]
         public DateTime? LceDataEntrega { get; set; }
 
 
+        [Required(ErrorMessage = "Campo Obrigatório !")]
         public bool? LceEntregue { get; set; }
 
 
