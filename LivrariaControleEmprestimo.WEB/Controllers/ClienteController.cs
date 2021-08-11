@@ -49,7 +49,7 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
         {
             Cliente objCliente = oClienteService.oRepositoryCliente.Alterar(model);
 
-            // Redirecionar para o Edit...
+            // Redirecionamento...
             int Id = objCliente.Id;
             return RedirectToAction("Details", new { Id });
         }
