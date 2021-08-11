@@ -1,16 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using LivrariaControleEmprestimo.DATA.Models;
+using LivrariaControleEmprestimo.DATA.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LivrariaControleEmprestimo.WEB.Controllers
 {
     public class LivroClienteController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        private LivroClienteEmprestimoService oClienteService = new LivroClienteEmprestimoService();
+
+            public IActionResult Index()
+            {
+                List<LivroClienteEmprestimo> objLCE = oClienteService.oRepositoryLivroClienteEmprestimo.SelecionarTodos();
+                return View(objLCE);
+            }
     }
 }
