@@ -9,10 +9,10 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
     {
         private LivroClienteEmprestimoService oClienteService = new LivroClienteEmprestimoService();
 
-            public IActionResult Index()
-            {
-                List<LivroClienteEmprestimo> objLCE = oClienteService.oRepositoryLivroClienteEmprestimo.SelecionarTodos();
-                return View(objLCE);
-            }
+        public IActionResult Index()
+        {
+            List<LivroClienteEmprestimo> objLCE = oClienteService.oRepositoryLivroClienteEmprestimo.SelecionarTodos();
+            return View(objLCE);
+        }
     }
 }

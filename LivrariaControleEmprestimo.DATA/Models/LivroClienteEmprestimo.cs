@@ -22,22 +22,20 @@ namespace LivrariaControleEmprestimo.DATA.Models
 
         [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column(TypeName = "datetime")]
-        [Display(Name = "Data de Retirada")]
+        [Display(Name = "Retirada")]
         [DataType(DataType.Date)]
         public DateTime? LceDataEmprestimo { get; set; }
 
 
         [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column(TypeName = "datetime")]
-        [Display(Name = "Data de Entrga")]
+        [Display(Name = "Entrga")]
         [DataType(DataType.Date)]
         public DateTime? LceDataEntrega { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório !")]
-        [Display(Name = "Entregue")]
-        //[DataType(DataType.Text)]
-        public bool? Ativo { get; set; }
+        [Display(Name = "Devolvido")]
+        public bool LceEntregue { get; set; }
 
 
         [ForeignKey(nameof(LceIdCliente))]
