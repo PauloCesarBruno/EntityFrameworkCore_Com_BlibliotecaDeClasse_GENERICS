@@ -2,7 +2,6 @@
 using LivrariaControleEmprestimo.DATA.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LivrariaControleEmprestimo.WEB.Controllers
 {
@@ -17,3 +16,4 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
         }
     }
 }
+                                                          
