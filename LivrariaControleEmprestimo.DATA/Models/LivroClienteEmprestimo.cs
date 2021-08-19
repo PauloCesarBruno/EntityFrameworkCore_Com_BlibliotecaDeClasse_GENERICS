@@ -22,13 +22,11 @@ namespace LivrariaControleEmprestimo.DATA.Models
        
         [Column(TypeName = "datetime")]
         [Display(Name = "Retirada")]
-        [DataType(DataType.Date)]
         public DateTime? LceDataEmprestimo { get; set; }
 
         
         [Column(TypeName = "datetime")]
         [Display(Name = "Entrga")]
-        [DataType(DataType.Date)]
         public DateTime? LceDataEntrega { get; set; }
 
 
