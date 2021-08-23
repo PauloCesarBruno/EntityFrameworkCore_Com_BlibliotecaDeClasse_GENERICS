@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
@@ -17,40 +18,24 @@ namespace LivrariaControleEmprestimo.DATA.Models
 
         [Key]
         public int Id { get; set; }
-
-
-        [Required(ErrorMessage = "Campo Obrigatório !")]
+        [Required]
         [Column("livroNome")]
-        [Display(Name ="Nome Livro")]
         [StringLength(50)]
         public string LivroNome { get; set; }
-
-
-        [Required(ErrorMessage = "Campo Obrigatório !")]
+        [Required]
         [Column("livroAutor")]
-        [Display(Name = "Autor")]
         [StringLength(200)]
         public string LivroAutor { get; set; }
-
-
-        [Required(ErrorMessage = "Campo Obrigatório !")]
+        [Required]
         [Column("livroEditora")]
-        [Display(Name = "Editora")]
         [StringLength(100)]
         public string LivroEditora { get; set; }
-
-
-        [Required(ErrorMessage = "Campo Obrigatório !")]
         [Column("livroAnoPublicacao", TypeName = "datetime")]
-        [Display(Name = "Data de Publicação")]
-        [DataType(DataType.Date)]
         public DateTime LivroAnoPublicacao { get; set; }
-
+        [Required]
         [Column("livroEdicao")]
-        [Display(Name = "Edição")]
         [StringLength(50)]
         public string LivroEdicao { get; set; }
-
 
         [InverseProperty("LceIdLivroNavigation")]
         public virtual ICollection<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }

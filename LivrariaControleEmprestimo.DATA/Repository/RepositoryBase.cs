@@ -10,7 +10,7 @@ namespace LivrariaControleEmprestimo.DATA.Repository
     public class RepositoryBase<T> : IRepositoryModel<T>, IDisposable where T : class
     {
         // Configurar o Contexto
-        protected ControleemprestimplivroContext _Contexto;
+        protected ControleemprestimolivroContext _Contexto;
         // Variavel de persistencia de banco de dados
         public bool _SaveChanges = true;
 
@@ -18,7 +18,7 @@ namespace LivrariaControleEmprestimo.DATA.Repository
         public RepositoryBase(bool saveChanges = true)
         {
             _SaveChanges = saveChanges;
-            _Contexto = new ControleemprestimplivroContext();
+            _Contexto = new ControleemprestimolivroContext();
         }
 
         //==========================================================================

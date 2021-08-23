@@ -1,6 +1,6 @@
 ﻿{
    "CodeGenerationMode": 0,
-   "ContextClassName": "ControleemprestimplivroContext",
+   "ContextClassName": "ControleemprestimolivroContext",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
    "FilterSchemas": false,
@@ -22,8 +22,12 @@
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Livro Cliente Emprestimo]",
+         "Name": "[dbo].[LivroClienteEmprestimo]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VW_Livro_Cliente_Emprestiimo]",
+         "ObjectType": 3
       }
    ],
    "UiHint": "DESKTOP-EJP79KA.ControleEmprestimpLivro",
