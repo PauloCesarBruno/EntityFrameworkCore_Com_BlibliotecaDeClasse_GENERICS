@@ -18,10 +18,11 @@ namespace LivrariaControleEmprestimo.DATA.Models
 
         [Key]
         public int Id { get; set; }
+
         [Required]
         [Column("cliCPF")]
         [StringLength(14)]
-        [Display(Name ="CPF")]
+        [Display(Name = "CPF")]
         public string CliCpf { get; set; }
 
         [Required]
@@ -53,17 +54,18 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [StringLength(50)]
         [Display(Name = "Número")]
         public string CliNumero { get; set; }
+
         [Required]
         [Column("cliTeleoneCelular")]
         [StringLength(20)]
         [Display(Name = "Tel.Celular")]
         public string CliTeleoneCelular { get; set; }
-
         [Required]
         [Column("cliTelefoneFixo")]
         [StringLength(20)]
         [Display(Name = "Tel.Fixo")]
         public string CliTelefoneFixo { get; set; }
+
 
         [InverseProperty("LceIdClienteNavigation")]
         public virtual ICollection<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }

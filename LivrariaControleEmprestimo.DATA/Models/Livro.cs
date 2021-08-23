@@ -37,9 +37,9 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Display(Name = "Editora")]
         public string LivroEditora { get; set; }
 
-        [Column("livroAnoPublicacao", TypeName = "datetime")]
+        [Display(Name = "Publicação")]
         [DataType(DataType.Date)]
-        [Display(Name = "publicação")]
+        [Column("livroAnoPublicacao", TypeName = "datetime")]
         public DateTime LivroAnoPublicacao { get; set; }
 
         [Required]
@@ -47,6 +47,7 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [StringLength(50)]
         [Display(Name = "Edição")]
         public string LivroEdicao { get; set; }
+
 
         [InverseProperty("LceIdLivroNavigation")]
         public virtual ICollection<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }
