@@ -21,7 +21,7 @@ namespace LivrariaControleEmprestimo.DATA.Models
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Livro> Livro { get; set; }
         public virtual DbSet<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }
-        public virtual DbSet<VwLivroClienteEmprestiimo> VwLivroClienteEmprestiimo { get; set; }
+        public virtual DbSet<VwLivroClienteEmprestimo> VwLivroClienteEmprestimo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -51,9 +51,9 @@ namespace LivrariaControleEmprestimo.DATA.Models
                     .HasConstraintName("FK_LivroClienteEmprestimo_Livro");
             });
 
-            modelBuilder.Entity<VwLivroClienteEmprestiimo>(entity =>
+            modelBuilder.Entity<VwLivroClienteEmprestimo>(entity =>
             {
-                entity.ToView("VW_Livro_Cliente_Emprestiimo");
+                entity.ToView("VW_Livro_Cliente_Emprestimo");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -10,23 +10,42 @@ using Microsoft.EntityFrameworkCore;
 namespace LivrariaControleEmprestimo.DATA.Models
 {
     [Keyless]
-    public partial class VwLivroClienteEmprestiimo
+    public partial class VwLivroClienteEmprestimo
     {
+        [Required]
+        [Column("cliCPF")]
+        [StringLength(14)]
+        [Display(Name ="CPF")]
+        public string CliCpf { get; set; }
+
         [Required]
         [Column("cliNome")]
         [StringLength(200)]
+        [Display(Name = "Nome")]
         public string CliNome { get; set; }
+
         [Required]
         [Column("livroNome")]
         [StringLength(50)]
+        [Display(Name = "Livro")]
         public string LivroNome { get; set; }
+
         public int Id { get; set; }
+
         public int LceIdCliente { get; set; }
+
         public int LceIdLivro { get; set; }
+
         [Column(TypeName = "datetime")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Retirada")]
         public DateTime LceDataEmprestimo { get; set; }
+
         [Column(TypeName = "datetime")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Devolução")]
         public DateTime LceDataEntrega { get; set; }
+
         public bool LceEntregue { get; set; }
     }
 }

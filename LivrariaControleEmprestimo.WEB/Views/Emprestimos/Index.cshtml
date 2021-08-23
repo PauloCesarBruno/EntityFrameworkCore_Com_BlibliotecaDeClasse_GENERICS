@@ -1,29 +1,33 @@
-﻿@model IEnumerable<LivrariaControleEmprestimo.DATA.Models.Cliente>
+﻿@model IEnumerable<LivrariaControleEmprestimo.DATA.Models.VwLivroClienteEmprestimo>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Clientes</h1>
+<h1>Emprestimos</h1>
 <hr />
 
 <p>
-    <a class="btn btn-success btn-sm" asp-action="Create">Novo Cliente</a>
+    <a class="btn btn-success btn-sm" asp-action="Create">Novo Emprestimo</a>
 </p>
-<table id="tblClientes" class="table">
+
+<table id="tblEmp" class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CliCpf)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.CliNome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CliTeleoneCelular)
+                @Html.DisplayNameFor(model => model.LivroNome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CliTelefoneFixo)
+                @Html.DisplayNameFor(model => model.LceDataEmprestimo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LceDataEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LceEntregue)
             </th>
             <th></th>
         </tr>
@@ -33,21 +37,24 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliCpf)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.CliNome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliTeleoneCelular)
+                    @Html.DisplayFor(modelItem => item.LivroNome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CliTelefoneFixo)
+                    @Html.DisplayFor(modelItem => item.LceDataEmprestimo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LceDataEntrega)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LceEntregue)
                 </td>
                 <td class="row col-md">
                     <a asp-action="Edit" class="btn btn-warning btn-sm mr-1" asp-route-id="@item.Id">Alterar</a>
                     <a asp-action="Details" class="btn btn-primary btn-sm mr-1" asp-route-id="@item.Id">Detalhes</a>
-                   
+
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger btn-sm mr-1" data-toggle="modal" data-target="#DeleteModal-@item.Id">
@@ -59,13 +66,13 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="DeleteModalLabel">Excluir Cliente</h5>
+                                    <h5 class="modal-title" id="DeleteModalLabel">Excluir Registro de Emprestimo</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    Deseja Realmente Excluir o Cliente @item.CliNome ?
+                                    Deseja Realmente Exclui Registro @item.CliNome LIVRO->  @item.LivroNome ?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
@@ -83,13 +90,13 @@
 @section Scripts {
     <script>
 
-    $(document).ready(function() {
-        $('#tblClientes').DataTable( {
-            language: {
-                url: '//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json'
-            }
-        } );
-    } );
+        $(document).ready(function () {
+            $('#tblEmp').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json'
+                }
+            });
+        });
 
     </script>
 }
