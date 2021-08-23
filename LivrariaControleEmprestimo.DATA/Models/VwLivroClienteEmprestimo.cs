@@ -15,13 +15,12 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Required]
         [Column("cliCPF")]
         [StringLength(14)]
-        [Display(Name ="CPF")]
         public string CliCpf { get; set; }
 
         [Required]
         [Column("cliNome")]
         [StringLength(200)]
-        [Display(Name = "Nome")]
+        [Display(Name ="Cliente")]
         public string CliNome { get; set; }
 
         [Required]
@@ -36,16 +35,20 @@ namespace LivrariaControleEmprestimo.DATA.Models
 
         public int LceIdLivro { get; set; }
 
-        [Column(TypeName = "datetime")]
         [DataType(DataType.Date)]
+        [Column(TypeName = "datetime")]
         [Display(Name = "Retirada")]
         public DateTime LceDataEmprestimo { get; set; }
 
         [Column(TypeName = "datetime")]
         [DataType(DataType.Date)]
-        [Display(Name = "Devolução")]
+        [Display(Name = "Devol.")]
         public DateTime LceDataEntrega { get; set; }
 
+        [Display(Name = "Entregue")]
         public bool LceEntregue { get; set; }
+
+        [Display(Name = "Em Dia")]
+        public bool LceAtrazo { get; set; }
     }
 }

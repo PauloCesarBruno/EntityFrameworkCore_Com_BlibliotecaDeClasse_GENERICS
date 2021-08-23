@@ -18,23 +18,34 @@ namespace LivrariaControleEmprestimo.DATA.Models
 
         [Key]
         public int Id { get; set; }
+
         [Required]
         [Column("livroNome")]
         [StringLength(50)]
+        [Display(Name = "Livro")]
         public string LivroNome { get; set; }
+
         [Required]
         [Column("livroAutor")]
         [StringLength(200)]
+        [Display(Name = "Autor")]
         public string LivroAutor { get; set; }
+
         [Required]
         [Column("livroEditora")]
         [StringLength(100)]
+        [Display(Name = "Editora")]
         public string LivroEditora { get; set; }
+
         [Column("livroAnoPublicacao", TypeName = "datetime")]
+        [DataType(DataType.Date)]
+        [Display(Name = "publicação")]
         public DateTime LivroAnoPublicacao { get; set; }
+
         [Required]
         [Column("livroEdicao")]
         [StringLength(50)]
+        [Display(Name = "Edição")]
         public string LivroEdicao { get; set; }
 
         [InverseProperty("LceIdLivroNavigation")]

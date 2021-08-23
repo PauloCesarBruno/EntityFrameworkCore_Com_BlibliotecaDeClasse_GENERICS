@@ -21,34 +21,48 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Required]
         [Column("cliCPF")]
         [StringLength(14)]
+        [Display(Name ="CPF")]
         public string CliCpf { get; set; }
+
         [Required]
         [Column("cliNome")]
         [StringLength(200)]
+        [Display(Name = "Nome")]
         public string CliNome { get; set; }
+
         [Required]
         [Column("cliEndereco")]
         [StringLength(200)]
+        [Display(Name = "Endereço")]
         public string CliEndereco { get; set; }
+
         [Required]
         [Column("cliCidade")]
         [StringLength(100)]
+        [Display(Name = "Cidade")]
         public string CliCidade { get; set; }
+
         [Required]
         [Column("cliBairro")]
         [StringLength(100)]
+        [Display(Name = "Bairro")]
         public string CliBairro { get; set; }
+
         [Required]
         [Column("cliNumero")]
         [StringLength(50)]
+        [Display(Name = "Número")]
         public string CliNumero { get; set; }
         [Required]
         [Column("cliTeleoneCelular")]
         [StringLength(20)]
+        [Display(Name = "Tel.Celular")]
         public string CliTeleoneCelular { get; set; }
+
         [Required]
         [Column("cliTelefoneFixo")]
         [StringLength(20)]
+        [Display(Name = "Tel.Fixo")]
         public string CliTelefoneFixo { get; set; }
 
         [InverseProperty("LceIdClienteNavigation")]

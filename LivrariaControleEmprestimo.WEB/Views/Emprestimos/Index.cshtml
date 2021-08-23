@@ -11,7 +11,7 @@
     <a class="btn btn-success btn-sm" asp-action="Create">Novo Emprestimo</a>
 </p>
 
-<table id="tblEmp" class="table">
+<table style="font-size: 13px;" id="tblEmp" class="table">
     <thead>
         <tr>
             <th>
@@ -28,61 +28,67 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.LceEntregue)
+            </th>           
+            <th>
+                @Html.DisplayNameFor(model => model.LceAtrazo)
             </th>
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody onload="Ver()">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CliNome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LivroNome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LceDataEmprestimo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LceDataEntrega)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LceEntregue)
-                </td>
-                <td class="row col-md">
-                    <a asp-action="Edit" class="btn btn-warning btn-sm mr-1" asp-route-id="@item.Id">Alterar</a>
-                    <a asp-action="Details" class="btn btn-primary btn-sm mr-1" asp-route-id="@item.Id">Detalhes</a>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CliNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LivroNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LceDataEmprestimo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LceDataEntrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LceEntregue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LceAtrazo)
+            </td>
+            <td class="row col-md">
+                <a asp-action="Edit" class="btn btn-warning btn-sm mr-1" asp-route-id="@item.Id">Alterar</a>
+                <a asp-action="Details" class="btn btn-primary btn-sm mr-1" asp-route-id="@item.Id">Detalhes</a>
 
 
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger btn-sm mr-1" data-toggle="modal" data-target="#DeleteModal-@item.Id">
-                        Excluir
-                    </button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger btn-sm mr-1" data-toggle="modal" data-target="#DeleteModal-@item.Id">
+                    Excluir
+                </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="DeleteModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="DeleteModalLabel">Excluir Registro de Emprestimo</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Deseja Realmente Exclui Registro @item.CliNome LIVRO->  @item.LivroNome ?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                                    <a asp-action="Delete" class="btn btn-danger mr-1" asp-route-id="@item.Id">Sim</a>
-                                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="DeleteModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="DeleteModalLabel">Excluir Registro de Emprestimo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Deseja Realmente Exclui Registro @item.CliNome LIVRO->  @item.LivroNome ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                                <a asp-action="Delete" class="btn btn-danger mr-1" asp-route-id="@item.Id">Sim</a>
                             </div>
                         </div>
                     </div>
-                </td>
-            </tr>
+                </div>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
