@@ -14,5 +14,6 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
             List<VwLivroClienteEmprestimo> oListCliente = oEmprestimoService.oReposytoriEmprestimo.SelecionarTodos();
             return View(oListCliente);
         }
+       
     }
 }

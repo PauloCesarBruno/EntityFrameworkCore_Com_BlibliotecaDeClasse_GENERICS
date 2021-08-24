@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Usage", "CA1816:Os métodos Dispose devem chamar SuppressFinalize", Justification = "<Pendente>", Scope = "member", Target = "~M:LivrariaControleEmprestimo.DATA.Repository.RepositoryBase`1.Dispose")]
+[assembly: SuppressMessage("Style", "IDE1006:Estilos de Nomenclatura", Justification = "<Pendente>", Scope = "member", Target = "~P:LivrariaControleEmprestimo.DATA.Services.VwLivroClienteEmprestimoService.oReposytoriEmprestimo")]

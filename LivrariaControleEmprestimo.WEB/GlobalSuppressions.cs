@@ -12,3 +12,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Style", "IDE0044:Adicionar modificador somente leitura", Justification = "<Pendente>", Scope = "member", Target = "~F:LivrariaControleEmprestimo.WEB.Controllers.ClienteController.oClienteService")]
 [assembly: SuppressMessage("Style", "IDE0090:Usar 'new(...)'", Justification = "<Pendente>", Scope = "member", Target = "~F:LivrariaControleEmprestimo.WEB.Controllers.ClienteController.oClienteService")]
 [assembly: SuppressMessage("CodeQuality", "IDE0076:'SuppressMessageAttribute' global inválido", Justification = "<Pendente>")]
+[assembly: SuppressMessage("Style", "IDE0044:Adicionar modificador somente leitura", Justification = "<Pendente>", Scope = "member", Target = "~F:LivrariaControleEmprestimo.WEB.Controllers.EmprestimosController.oEmprestimoService")]
+[assembly: SuppressMessage("Style", "IDE0090:Usar 'new(...)'", Justification = "<Pendente>", Scope = "member", Target = "~F:LivrariaControleEmprestimo.WEB.Controllers.EmprestimosController.oEmprestimoService")]
