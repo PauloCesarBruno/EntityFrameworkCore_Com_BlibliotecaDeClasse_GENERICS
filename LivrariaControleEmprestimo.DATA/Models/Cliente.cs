@@ -22,7 +22,7 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Required]
         [Column("cliCPF")]
         [StringLength(14)]
-        [Display(Name = "CPF")]
+        [Display(Name ="CPF")]
         public string CliCpf { get; set; }
 
         [Required]
@@ -60,6 +60,7 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [StringLength(20)]
         [Display(Name = "Tel.Celular")]
         public string CliTeleoneCelular { get; set; }
+
         [Required]
         [Column("cliTelefoneFixo")]
         [StringLength(20)]

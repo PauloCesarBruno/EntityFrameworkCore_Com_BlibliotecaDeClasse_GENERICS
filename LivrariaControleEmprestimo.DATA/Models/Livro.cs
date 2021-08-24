@@ -37,9 +37,9 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Display(Name = "Editora")]
         public string LivroEditora { get; set; }
 
-        [Display(Name = "Publicação")]
-        [DataType(DataType.Date)]
         [Column("livroAnoPublicacao", TypeName = "datetime")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Publicação")]
         public DateTime LivroAnoPublicacao { get; set; }
 
         [Required]
