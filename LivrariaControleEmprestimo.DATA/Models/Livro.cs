@@ -17,6 +17,7 @@ namespace LivrariaControleEmprestimo.DATA.Models
         }
 
         [Key]
+        [Display(Name = "Cód.")]
         public int Id { get; set; }
 
         [Required]

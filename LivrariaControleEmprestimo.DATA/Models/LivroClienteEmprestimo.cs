@@ -13,20 +13,36 @@ namespace LivrariaControleEmprestimo.DATA.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Código do cliente")]
         public int LceIdCliente { get; set; }
+
+        [Display(Name = "Código do livro")]
         public int LceIdLivro { get; set; }
+
         [Column(TypeName = "datetime")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Data da Saída")]
         public DateTime LceDataEmprestimo { get; set; }
+
         [Column(TypeName = "datetime")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Data do Retorno")]
         public DateTime LceDataEntrega { get; set; }
+
+        [Display(Name = "Foi Entregue ?")]
         public bool LceEntregue { get; set; }
+
         [Required]
         [StringLength(3)]
+        [Display(Name = "Esta Atrasado (Sim ou Não) ?")]
         public string LceAtrazo { get; set; }
+
 
         [ForeignKey(nameof(LceIdCliente))]
         [InverseProperty(nameof(Cliente.LivroClienteEmprestimo))]
         public virtual Cliente LceIdClienteNavigation { get; set; }
+
         [ForeignKey(nameof(LceIdLivro))]
         [InverseProperty(nameof(Livro.LivroClienteEmprestimo))]
         public virtual Livro LceIdLivroNavigation { get; set; }
