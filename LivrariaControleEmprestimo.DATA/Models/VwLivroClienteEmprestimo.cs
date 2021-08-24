@@ -12,19 +12,19 @@ namespace LivrariaControleEmprestimo.DATA.Models
     [Keyless]
     public partial class VwLivroClienteEmprestimo
     {
-        [Required]
+        //[Required]
         [Column("cliCPF")]
         [StringLength(14)]
         [Display(Name = "CPF")]
         public string CliCpf { get; set; }
 
-        [Required]
+       // [Required]
         [Column("cliNome")]
         [StringLength(200)]
         [Display(Name = "Nome")]
         public string CliNome { get; set; }
 
-        [Required]
+       // [Required]
         [Column("livroNome")]
         [StringLength(50)]
         [Display(Name = "Livro")]
@@ -50,8 +50,7 @@ namespace LivrariaControleEmprestimo.DATA.Models
         public bool LceEntregue { get; set; }
 
         [Required]
-        [StringLength(3)]
-        [DataType(DataType.Date)]
+        [StringLength(3)]          
         [Display(Name = "Atrasado")]
         public string LceAtrazo { get; set; }
     }
