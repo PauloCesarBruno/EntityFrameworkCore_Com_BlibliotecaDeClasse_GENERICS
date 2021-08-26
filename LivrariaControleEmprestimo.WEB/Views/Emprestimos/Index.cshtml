@@ -58,13 +58,13 @@
                 @Html.DisplayFor(modelItem => item.LceAtrazo)
             </td>
             <td class="row col-md">
-                <a asp-action="Edit" class="btn btn-warning btn-sm mr-1" asp-route-id="@item.Id">Alterar</a>
-                <a asp-action="Details" class="btn btn-primary btn-sm mr-1" asp-route-id="@item.Id">Detalhes</a>
+                <a asp-action="Edit" class="btn btn-warning btn-sm rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Alterar" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o"></i></a>
+                <a asp-action="Details" class="btn btn-primary btn-sm rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Detalhes" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a>
 
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger btn-sm mr-1" data-toggle="modal" data-target="#DeleteModal-@item.Id">
-                    Excluir
+                <button type="button" class="btn btn-danger btn-sm rounded-circle mr-1" data-toggle="modal" data-target="#DeleteModal-@item.Id" data-toggle="tooltip" data-placement="top" title="Excluir">
+                    <i class="fa fa-times-circle"></i>
                 </button>
 
                 <!-- Modal -->
