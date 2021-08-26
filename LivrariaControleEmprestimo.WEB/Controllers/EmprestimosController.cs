@@ -56,5 +56,13 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
             return RedirectToAction("Details", new { Id });
         }
 
+        public IActionResult Delete(int Id)
+        {
+            /* Não vou usar partial View nem retornar nehuma view vou usar 
+             * o Botstrap Modal e retornar para Index Mesmo.*/
+            oEmprestimoService.oRLce.Excluir(Id);
+            return RedirectToAction("Index");
+        }
+
     }
 }
