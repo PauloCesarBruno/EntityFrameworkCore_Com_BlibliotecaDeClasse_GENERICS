@@ -14,26 +14,31 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Key]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Display(Name = "Código do cliente")]
         public int LceIdCliente { get; set; }
 
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Display(Name = "Código do livro")]
         public int LceIdLivro { get; set; }
 
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column(TypeName = "datetime")]
         [DataType(DataType.Date)]
         [Display(Name = "Data da Saída")]
         public DateTime LceDataEmprestimo { get; set; }
 
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column(TypeName = "datetime")]
         [DataType(DataType.Date)]
         [Display(Name = "Data do Retorno")]
         public DateTime LceDataEntrega { get; set; }
 
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Display(Name = "Foi Entregue ?")]
         public bool LceEntregue { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [StringLength(3)]
         [Display(Name = "Esta Atrasado (Sim ou Não) ?")]
         public string LceAtrazo { get; set; }

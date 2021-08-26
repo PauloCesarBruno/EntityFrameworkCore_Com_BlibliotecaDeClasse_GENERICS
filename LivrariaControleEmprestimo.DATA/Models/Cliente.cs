@@ -20,49 +20,49 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Display(Name = "Cód.")]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="CampoObrigatório !")]
         [Column("cliCPF")]
         [StringLength(14)]
         [Display(Name ="CPF")]
         public string CliCpf { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("cliNome")]
         [StringLength(200)]
         [Display(Name = "Nome")]
         public string CliNome { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("cliEndereco")]
         [StringLength(200)]
         [Display(Name = "Endereço")]
         public string CliEndereco { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("cliCidade")]
         [StringLength(100)]
         [Display(Name = "Cidade")]
         public string CliCidade { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("cliBairro")]
         [StringLength(100)]
         [Display(Name = "Bairro")]
         public string CliBairro { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("cliNumero")]
         [StringLength(50)]
         [Display(Name = "Número")]
         public string CliNumero { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("cliTeleoneCelular")]
         [StringLength(20)]
         [Display(Name = "Tel.Celular")]
         public string CliTeleoneCelular { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("cliTelefoneFixo")]
         [StringLength(20)]
         [Display(Name = "Tel.Fixo")]
