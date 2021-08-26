@@ -38,7 +38,23 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
         {
             LivroClienteEmprestimo oLceEmprestimo = oEmprestimoService.oRLce.SelecionarPk(Id);
             return View(oLceEmprestimo);
-        }         
+        }
+
+        public IActionResult Edit(int Id)
+        {
+            LivroClienteEmprestimo oLceEmprestimo = oEmprestimoService.oRLce.SelecionarPk(Id);
+            return View(oLceEmprestimo);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(LivroClienteEmprestimo model)
+        {
+            LivroClienteEmprestimo oLceEmprestimo = oEmprestimoService.oRLce.Alterar(model);
+
+            // Redirecionamento...
+            int Id = oLceEmprestimo.Id;
+            return RedirectToAction("Details", new { Id });
+        }
 
     }
 }
