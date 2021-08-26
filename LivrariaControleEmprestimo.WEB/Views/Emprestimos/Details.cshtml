@@ -1,0 +1,54 @@
+﻿@model LivrariaControleEmprestimo.DATA.Models.LivroClienteEmprestimo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes do emprestimo</h1>
+
+<div>
+    <h4>Confira os detalhes abaixo</h4>
+    <hr />
+    <div>
+        <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@Model.Id">Alterar emprestimo</a>
+        <a class="btn btn-primary btn-sm" asp-action="Index">Voltar</a>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-sm-8">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="card">
+                    <div class="card-header">Informações do emprestimo</div>
+                    <div class="card-body row">
+
+                        <div class="form-group col-sm-8">
+                            <label asp-for="LceIdCliente" class="control-label"></label>
+                            <input disabled asp-for="LceIdCliente" class="form-control" />
+
+                            <label asp-for="LceIdLivro" class="control-label"></label>
+                            <input disabled asp-for="LceIdLivro" class="form-control" />
+
+                            <label asp-for="LceDataEmprestimo" class="control-label"></label>
+                            <input disabled asp-for="LceDataEmprestimo" class="form-control" />
+
+                            <label asp-for="LceDataEntrega" class="control-label"></label>
+                            <input disabled asp-for="LceDataEntrega" class="form-control" />
+
+                            <div class="form-group form-check">
+                                <br />
+                                <label class="form-check-label">
+                                    <input disabled class="form-check-input" asp-for="LceEntregue" /> @Html.DisplayNameFor(model => model.LceEntregue)
+                                </label>
+                            </div>
+
+                            <label asp-for="LceAtrazo" class="control-label"></label>
+                            <input disabled asp-for="LceAtrazo" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

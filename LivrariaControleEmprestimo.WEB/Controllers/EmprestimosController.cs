@@ -34,5 +34,11 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Details(int Id)
+        {
+            LivroClienteEmprestimo oLceEmprestimo = oEmprestimoService.oRLce.SelecionarPk(Id);
+            return View(oLceEmprestimo);
+        }         
+
     }
 }
