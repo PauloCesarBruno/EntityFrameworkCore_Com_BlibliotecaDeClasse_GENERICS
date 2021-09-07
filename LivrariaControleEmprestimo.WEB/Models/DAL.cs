@@ -62,6 +62,29 @@ namespace LivrariaControleEmprestimo.WEB.Models
             }                
         }
 
+        public Object ExecutarManipulacao(CommandType commandType, String Sp_Ou_Texto)
+        {
+            try
+            {
+                SqlConnection conn = Conexao();
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = commandType;
+                cmd.CommandText = Sp_Ou_Texto;
+                cmd.CommandTimeout = 3600;
+
+                foreach (SqlParameter param in Colecao)
+                {
+                    cmd.Parameters.Add(new SqlParameter(param.ParameterName, param.Value));
+                }
+                return cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public DataTable RetDatatable(String sql)
         {
             DataTable dt = new DataTable();

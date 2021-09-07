@@ -16,3 +16,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Style", "IDE0090:Usar 'new(...)'", Justification = "<Pendente>", Scope = "member", Target = "~F:LivrariaControleEmprestimo.WEB.Controllers.EmprestimosController.oEmprestimoService")]
 [assembly: SuppressMessage("Style", "IDE0044:Adicionar modificador somente leitura", Justification = "<Pendente>", Scope = "member", Target = "~F:LivrariaControleEmprestimo.WEB.Controllers.EmprestimosController.oVWEmprestimoService")]
 [assembly: SuppressMessage("Style", "IDE0090:Usar 'new(...)'", Justification = "<Pendente>", Scope = "member", Target = "~F:LivrariaControleEmprestimo.WEB.Controllers.EmprestimosController.oVWEmprestimoService")]
+[assembly: SuppressMessage("Style", "IDE0090:Usar 'new(...)'", Justification = "<Pendente>", Scope = "member", Target = "~M:LivrariaControleEmprestimo.WEB.Models.ModelLogin.ValidarLogin~System.Boolean")]
+[assembly: SuppressMessage("Style", "IDE0090:Usar 'new(...)'", Justification = "<Pendente>", Scope = "member", Target = "~M:LivrariaControleEmprestimo.WEB.Models.ModelCadastro.InserirUsuario")]
