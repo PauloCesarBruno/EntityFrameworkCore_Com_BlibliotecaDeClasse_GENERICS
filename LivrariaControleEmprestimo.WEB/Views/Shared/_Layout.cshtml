@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
     <link rel="icon" href="~/img/Icone.ico" />
 </head>
-<body>
+<body onload="Logado()">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -33,6 +33,9 @@
                     </ul>
                 </div>
             </div>
+            @using Microsoft.AspNetCore.Http
+            @inject IHttpContextAccessor HttpContextAccessor
+            <div id="logado"></div>
         </nav>
     </header>
     <div class="container">
@@ -51,5 +54,20 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+    function Logado() {
+            let nome = '@HttpContextAccessor.HttpContext.Session.GetString("NomeLogado")';
+            if (nome != "") {
+                let divNome = document.getElementById('logado');
+                divNome.innerHTML = "Logado(a): " + nome + " <a href = '../Home/Login/0'><strong><em>(Sair)</strong></em></a>";
+                divNome.style = "color: red; padding-top: -15px; font-size: 12px;";
+            }
+            else {
+                window.location.href = '../Home/Login';
+            }
+        }
+    </script>
+
 </body>
 </html>
