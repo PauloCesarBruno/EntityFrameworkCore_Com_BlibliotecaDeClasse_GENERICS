@@ -28,10 +28,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.LceEntregue)
-            </th>           
-            <th>
-                @Html.DisplayNameFor(model => model.LceAtrazo)
-            </th>
+            </th>            
             <th></th>
         </tr>
     </thead>
@@ -53,10 +50,7 @@
             </td>
             <td style="padding-left: 35px;">
                 @Html.DisplayFor(modelItem => item.LceEntregue)
-            </td>
-            <td style="padding-left: 25px;">
-                @Html.DisplayFor(modelItem => item.LceAtrazo)
-            </td>
+            </td>            
             <td class="row col-md">
                 <a asp-action="Edit" class="btn btn-warning btn-sm rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Alterar" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o"></i></a>
                 <a asp-action="Details" class="btn btn-primary btn-sm rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Detalhes" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a>

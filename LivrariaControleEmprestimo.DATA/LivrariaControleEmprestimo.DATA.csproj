@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Models\LivroClienteEmprestimo.cs~RF6f605e0.TMP" />
     <None Remove="Services\VwLivroClienteEmprestiimoService.cs~RF20f6c91.TMP" />
   </ItemGroup>
 

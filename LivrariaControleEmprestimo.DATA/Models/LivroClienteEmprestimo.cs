@@ -38,12 +38,7 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Display(Name = "Foi Entregue ?")]
         public bool LceEntregue { get; set; }
 
-        [Required(ErrorMessage = "CampoObrigatório !")]
-        [StringLength(3)]
-        [Display(Name = "Esta Atrasado (Sim ou Não) ?")]
-        public string LceAtrazo { get; set; }
-
-
+       
         [ForeignKey(nameof(LceIdCliente))]
         [InverseProperty(nameof(Cliente.LivroClienteEmprestimo))]
         public virtual Cliente LceIdClienteNavigation { get; set; }

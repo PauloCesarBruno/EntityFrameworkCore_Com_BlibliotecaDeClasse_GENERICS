@@ -47,11 +47,6 @@ namespace LivrariaControleEmprestimo.DATA.Models
         public DateTime LceDataEntrega { get; set; }
 
         [Display(Name = "Entregue")]
-        public bool LceEntregue { get; set; }
-
-        [Required]
-        [StringLength(3)]          
-        [Display(Name = "Atrasado")]
-        public string LceAtrazo { get; set; }
+        public bool LceEntregue { get; set; }          
     }
 }
