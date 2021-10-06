@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - LivrariaControleEmprestimo.WEB</title>
+    <title>@ViewData["Title"] - Sistema Controle de empréstimo de livros</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -46,7 +46,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            @DateTime.Now.Year - Livraria - por Paulo Bruno &reg; <a asp-area="" asp-controller="Home" asp-action="Index">Sobre o Desenvolvedor</a>
+            @DateTime.Now.Year - Sistema Controle de empréstimo de livros - por Paulo Bruno &reg; <a asp-area="" asp-controller="Home" asp-action="Index">Sobre o Desenvolvedor</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -60,7 +60,7 @@
             let nome = '@HttpContextAccessor.HttpContext.Session.GetString("NomeLogado")';
             if (nome != "") {
                 let divNome = document.getElementById('logado');
-                divNome.innerHTML = "Logado(a): " + nome + " <a href = '../Home/Login/0'><strong><em>(Sair)</strong></em></a>";
+                divNome.innerHTML = "Logado(a): " + nome + " <a href = '../../Home/Login/0'><strong><em>(Sair)</strong></em></a>";
                 divNome.style = "color: red; padding-top: -15px; font-size: 12px;";
             }
             else {

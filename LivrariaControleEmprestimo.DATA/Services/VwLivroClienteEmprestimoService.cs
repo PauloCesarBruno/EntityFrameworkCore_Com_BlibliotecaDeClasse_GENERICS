@@ -9,11 +9,11 @@ namespace LivrariaControleEmprestimo.DATA.Services
 {
     public class VwLivroClienteEmprestimoService
     {
-        public ReposytoriVwLivroClienteEmprestimo oReposytoriEmprestimo{ get; set; }
+        public ReposytoriVwLivroClienteEmprestimo oReposytoriVwLivroClienteEmprestimo{ get; set; }
 
         public VwLivroClienteEmprestimoService()
         {
-            oReposytoriEmprestimo = new ReposytoriVwLivroClienteEmprestimo();
+            oReposytoriVwLivroClienteEmprestimo = new ReposytoriVwLivroClienteEmprestimo();
         }
         
     }
