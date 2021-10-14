@@ -51,5 +51,35 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
             _service.oReposytoriLivroClienteEmprestimo.Incluir(oLivroClienteEmprestimo);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Details(int Id)
+        {
+            LivroClienteEmprestimo oListLivroClienteEmprestimo = _service.oReposytoriLivroClienteEmprestimo.SelecionarPk(Id);
+            return View(oListLivroClienteEmprestimo);
+        }
+
+        public IActionResult Edit(int Id)
+        {
+            LivroClienteEmprestimo oListLivroClienteEmprestimo = _service.oReposytoriLivroClienteEmprestimo.SelecionarPk(Id);
+            return View(oListLivroClienteEmprestimo);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(LivroClienteEmprestimo model)
+        {
+            LivroClienteEmprestimo oListLivroClienteEmprestimo = _service.oReposytoriLivroClienteEmprestimo.Alterar(model);
+
+            // Redirecionamento...
+            int Id = oListLivroClienteEmprestimo.Id;
+            return RedirectToAction("Index", "Emprestimos", new { Id });
+        }
+
+        public IActionResult Delete(int Id)
+        {
+            /* Não vou usar partial View nem retornar nehuma view vou usar 
+             * o Botstrap Modal e retornar para Index Mesmo.*/
+            _service.oReposytoriLivroClienteEmprestimo.Excluir(Id);
+            return RedirectToAction("Index");
+        }
     }
 }
