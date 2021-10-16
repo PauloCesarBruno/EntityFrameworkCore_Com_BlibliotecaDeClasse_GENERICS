@@ -40,14 +40,14 @@
 
 
                         <label asp-for="LceDataEmprestimo" class="control-label"></label>
-                        <input asp-for="LceDataEmprestimo" class="form-control" />
+                        <input readonly asp-for="LceDataEmprestimo" class="form-control" />
                         <span asp-validation-for="LceDataEmprestimo" class="text-danger"></span>
 
                         <label asp-for="LceDataEntrega" class="control-label"></label>
-                        <input asp-for="LceDataEntrega" class="form-control" />
+                        <input readonly asp-for="LceDataEntrega" class="form-control" />
                         <span asp-validation-for="LceDataEntrega" class="text-danger"></span>
 
-                        <div class="form-group form-check">
+                        <div style="color: red;" class="form-group form-check">
                             <br />
                             <label class="form-check-label">
                                 <input class="form-check-input" asp-for="LceEntregue" /> @Html.DisplayNameFor(model => model.LceEntregue)
