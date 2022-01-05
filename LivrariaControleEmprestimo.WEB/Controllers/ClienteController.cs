@@ -1,6 +1,7 @@
 ﻿using LivrariaControleEmprestimo.DATA.Models;
 using LivrariaControleEmprestimo.DATA.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace LivrariaControleEmprestimo.WEB.Controllers
@@ -56,10 +57,18 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
 
         public IActionResult Delete(int Id)
         {
-            /* Não vou usar partial View nem retornar nehuma view vou usar 
-             * o Botstrap Modal e retornar para Index Mesmo.*/
-            oClienteService.oRepositoryCliente.Excluir(Id);
-            return RedirectToAction("Index");
+            try
+            {
+                /* Não vou usar partial View nem retornar nehuma view vou usar 
+                * o Botstrap Modal e retornar para Index Mesmo.*/
+                oClienteService.oRepositoryCliente.Excluir(Id);
+                return RedirectToAction("Index");
+            }
+            catch 
+            {
+                return BadRequest("Não é Possivel a Exclusão deste Cliente, pois o mesmo possui livro emprestado !");
+            }
+           
         }
     }
 }
