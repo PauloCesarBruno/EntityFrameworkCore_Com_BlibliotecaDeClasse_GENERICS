@@ -1,0 +1,23 @@
+﻿ <!-- Modal -->
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger" id="DeleteModalLabel">Exclusão de Livro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                    
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6 class="text-danger">Não é Possivel excluir este Livro pois o mesmo esta  emprestado a um cliente !!!</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="Sair()" class="btn btn-secondary" data-dismiss="modal">Sair</button>                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Sair() {
+            window.location.href = '../../Livro/Index';
+        }
+    </script>

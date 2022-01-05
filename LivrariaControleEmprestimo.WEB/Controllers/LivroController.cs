@@ -65,7 +65,7 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
             }
             catch
             {
-                return BadRequest("Não é Possivel a Exclusão deste Livro pois o mesmo está emprestado !");
+                return View("Tratamento");
             }
         }
     }
