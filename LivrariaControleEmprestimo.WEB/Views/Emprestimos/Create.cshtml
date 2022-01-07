@@ -29,134 +29,138 @@
             </div>
 
             <!--================================================-->
+            <div onclick="Habilita()">
+                <div class="card">
+                    <div class="card-header">Clientes</div>
+                    <div class="card-body">
+                        <table style="font-size: 13px;" id="listClienteTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oCliente.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oCliente.CliCpf)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oCliente.CliNome)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oCliente.CliTeleoneCelular)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oCliente.CliTelefoneFixo)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.oListCliente)
+                                {
+                                    <tr onclick="passIdCliente('@item.Id')">
+                                        <td style="padding-left: 25px; color: red;">
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CliCpf)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CliNome)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CliTeleoneCelular)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CliTelefoneFixo)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="card">
+                    <div class="card-header">Livros</div>
+                    <div class="card-body">
+                        <table style="font-size: 13px;" id="listLivroTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oLivro.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oLivro.LivroNome)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oLivro.LivroAutor)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oLivro.LivroEditora)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oLivro.LivroAnoPublicacao)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.oLivro.LivroEdicao)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.oListLivro)
+                                {
+                                    <tr onclick="passIdLivro('@item.Id')">
+                                        <td style="padding-left: 25px; color: red;">
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LivroNome)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LivroAutor)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LivroEditora)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LivroAnoPublicacao)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LivroEdicao)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="card">
+                    <div class="card-header">Datas</div>
+                    <div class="card-body row">
+                        <div class="col col-md-6">
+                            <div class="form-group">
+                                <label asp-for="dataEmprestimo" class="control-label"></label>
+                                <input readonly asp-for="dataEmprestimo" class="form-control" />
+                                <span asp-validation-for="dataEmprestimo" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group">
+                                <label asp-for="dataEntrega" class="control-label"></label>
+                                <input asp-for="dataEntrega" class="form-control" />
+                                <span asp-validation-for="dataEntrega" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <button type="submit" id="botao" hidden="true" disabled="true" class="btn btn-success btn-sm "><i class="fa fa-plus-circle"> Incluir novo emprestimo</i></button>
+                </div>
 
-            <div class="card">
-                <div class="card-header">Clientes</div>
-                <div class="card-body">
-                    <table style="font-size: 13px;" id="listClienteTable" class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oCliente.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oCliente.CliCpf)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oCliente.CliNome)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oCliente.CliTeleoneCelular)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oCliente.CliTelefoneFixo)
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.oListCliente)
-                            {
-                                <tr onclick="passIdCliente('@item.Id')">
-                                    <td style="padding-left: 25px; color: red;">
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CliCpf)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CliNome)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CliTeleoneCelular)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CliTelefoneFixo)
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                <div id="info1" class="form-group">
+                    <h6 style="margin-right: 50%;" class="text-warning shadow p-3 mb-5 bg-white rounded">Para ativar o botão de INCLUSÃO, escolha o cliente e o livro nas tabelas acima.</h6>
                 </div>
-            </div>
-            <br /><br />
-            <div class="card">
-                <div class="card-header">Livros</div>
-                <div class="card-body">
-                    <table style="font-size: 13px;" id="listLivroTable" class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oLivro.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oLivro.LivroNome)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oLivro.LivroAutor)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oLivro.LivroEditora)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oLivro.LivroAnoPublicacao)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oLivro.LivroEdicao)
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.oListLivro)
-                            {
-                                <tr onclick="passIdLivro('@item.Id')">
-                                    <td style="padding-left: 25px; color: red;">
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.LivroNome)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.LivroAutor)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.LivroEditora)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.LivroAnoPublicacao)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.LivroEdicao)
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <br /><br />
-            <div class="card">
-                <div class="card-header">Datas</div>
-                <div class="card-body row">
-                    <div class="col col-md-6">
-                        <div class="form-group">
-                            <label asp-for="dataEmprestimo" class="control-label"></label>
-                            <input readonly asp-for="dataEmprestimo" class="form-control" />
-                            <span asp-validation-for="dataEmprestimo" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col col-md-6">
-                        <div class="form-group">
-                            <label asp-for="dataEntrega" class="control-label"></label>
-                            <input asp-for="dataEntrega" class="form-control" />
-                            <span asp-validation-for="dataEntrega" class="text-danger"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div class="form-group">
-                <button type="submit"  class="btn btn-success btn-sm "><i class="fa fa-plus-circle"> Incluir novo emprestimo</i></button> 
-            </div>
         </form>
     </div>
 </div>
@@ -208,10 +212,14 @@
 
         function passIdCliente(idCliente) {
             document.getElementById('idCliente').value = idCliente;
+            document.getElementById('botao').hidden = false;
+            document.getElementById('info1').hidden = true;
+
         }
 
         function passIdLivro(idLivro) {
             document.getElementById('idLivro').value = idLivro;
+            document.getElementById('botao').disabled = false;
         }
 
     </script>
