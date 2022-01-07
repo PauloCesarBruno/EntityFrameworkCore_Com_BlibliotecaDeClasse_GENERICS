@@ -22,7 +22,7 @@ namespace LivrariaControleEmprestimo.WEB
             services.AddControllersWithViews();
             services.AddCors();             
             services.AddSession();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,7 +31,8 @@ namespace LivrariaControleEmprestimo.WEB
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+                app.UseBrowserLink(); /* Instalado no Projeto .WEB para visualização em tempo real
+                atraxez do painel de Link do Navegador. */
             }
             else
             {
