@@ -1,5 +1,4 @@
-﻿using LivrariaControleEmprestimo.WEB.Models;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 

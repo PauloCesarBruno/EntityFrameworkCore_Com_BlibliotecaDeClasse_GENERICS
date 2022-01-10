@@ -11,33 +11,33 @@
     <a class="btn btn-success btn-sm" asp-action="Create"><i class="fa fa-book"></i> Add. novo livro</a>
 </p>
 
-    <table style="font-size: 13px;" id="tblLivros" class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Id)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LivroNome)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LivroAutor)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LivroEditora)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LivroAnoPublicacao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LivroEdicao)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+<table style="font-size: 13px;" id="tblLivros" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LivroNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LivroAutor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LivroEditora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LivroAnoPublicacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LivroEdicao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
             <tr>
                 <td style="padding-left: 25px; color: red;">
                     @Html.DisplayFor(modelItem => item.Id)
@@ -87,24 +87,22 @@
                             </div>
                         </div>
                     </div>
-
-
                 </td>
             </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
 
-    @section Scripts {
-        <script>
+@section Scripts {
+    <script>
 
-            $(document).ready(function () {
-                $('#tblLivros').DataTable({
-                    language: {
-                        url: '//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json'
-                    }
-                });
+        $(document).ready(function () {
+            $('#tblLivros').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json'
+                }
             });
+        });
 
-        </script>
-    }
+    </script>
+}
