@@ -22,13 +22,13 @@ namespace LivrariaControleEmprestimo.DATA.Models
 
         [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("livroNome")]
-        [StringLength(50)]
+        [StringLength(100)]
         [Display(Name = "Livro")]
         public string LivroNome { get; set; }
 
         [Required(ErrorMessage = "CampoObrigatório !")]
         [Column("livroAutor")]
-        [StringLength(200)]
+        [StringLength(100)]
         [Display(Name = "Autor")]
         public string LivroAutor { get; set; }
 
