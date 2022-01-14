@@ -48,19 +48,33 @@
 
             @{
                 var styleStatus = "text-success";
-                if (DateTime.Now.Date > item.LceDataEntrega)
+
+                if (item.LceEntregue == true)
                 {
-                    styleStatus = "text-danger";
+                    styleStatus = "";
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LceDataEntrega)
+                    </td>
                 }
-                else if (DateTime.Now.Date.Equals(item.LceDataEntrega))
+                else
                 {
-                    styleStatus = "text-warning";
+
+                    if (DateTime.Now.Date > item.LceDataEntrega.Date)
+                    {
+                        styleStatus = "text-danger";
+                    }
+                    else if (DateTime.Now.Date.Equals(item.LceDataEntrega.Date))
+                    {
+                        styleStatus = "text-warning";
+                    }
+                    <td class="@styleStatus" style="font-family: Arial; font-size: 17px;">
+                        @Html.DisplayFor(modelItem => item.LceDataEntrega)
+                    </td>
                 }
+
             }
 
-            <td style="font-family: Arial; font-size: 17px;" class="@styleStatus">
-                @Html.DisplayFor(modelItem => item.LceDataEntrega)
-            </td>
+           
             <td style="padding-left: 35px;">
                 @Html.DisplayFor(modelItem => item.LceEntregue)
             </td>
