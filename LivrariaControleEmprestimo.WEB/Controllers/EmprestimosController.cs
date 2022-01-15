@@ -55,14 +55,14 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
 
         public IActionResult Details(int Id)
         {
-            LivroClienteEmprestimo oListLivroClienteEmprestimo = _service.oReposytoriLivroClienteEmprestimo.SelecionarPk(Id);
-            return View(oListLivroClienteEmprestimo);
+            VwLivroClienteEmprestimo oLivroClienteEmprestimo = _service.oReposytoriVwLivroClienteEmprestimo.SelecionarPk(Id);
+            return View(oLivroClienteEmprestimo);
         }
 
         public IActionResult Edit(int Id)
         {
-            LivroClienteEmprestimo oListLivroClienteEmprestimo = _service.oReposytoriLivroClienteEmprestimo.SelecionarPk(Id);
-            return View(oListLivroClienteEmprestimo);
+            VwLivroClienteEmprestimo oLivroClienteEmprestimo = _service.oReposytoriVwLivroClienteEmprestimo.SelecionarPk(Id);
+            return View(oLivroClienteEmprestimo);
         }
 
         [HttpPost]

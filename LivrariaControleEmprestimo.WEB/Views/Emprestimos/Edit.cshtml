@@ -1,4 +1,4 @@
-﻿@model LivrariaControleEmprestimo.DATA.Models.LivroClienteEmprestimo
+﻿@model LivrariaControleEmprestimo.DATA.Models.VwLivroClienteEmprestimo
 
 @{
     ViewData["Title"] = "Edit";
@@ -30,13 +30,20 @@
                 <div class="card-body row">
 
                     <div class="form-group form-group col-sm-8">
-                        <label asp-for="LceIdLivro" class="control-label"></label>
+                        
                         <input type="hidden" asp-for="LceIdLivro" class="form-control" />
                         <span asp-validation-for="LceIdLivro" class="text-danger"></span>
-
-                        <label asp-for="LceIdCliente" class="control-label"></label>
+                        
                         <input type="hidden" asp-for="LceIdCliente" class="form-control" />
                         <span asp-validation-for="LceIdCliente" class="text-danger"></span>
+
+                        <label asp-for="CliNome" class="control-label"></label>
+                        <input readonly asp-for="CliNome" class="form-control" />
+                        <span asp-validation-for="CliNome" class="text-danger"></span>
+
+                        <label asp-for="LivroNome" class="control-label"></label>
+                        <input readonly asp-for="LivroNome" class="form-control" />
+                        <span asp-validation-for="LivroNome" class="text-danger"></span>
 
 
                         <label asp-for="LceDataEmprestimo" class="control-label"></label>

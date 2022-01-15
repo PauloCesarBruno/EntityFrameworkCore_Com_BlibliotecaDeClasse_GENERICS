@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LivrariaControleEmprestimo.DATA.Models
 {
-    [Keyless]
+    //[Keyless]
     public partial class VwLivroClienteEmprestimo
     {
         [Required]
