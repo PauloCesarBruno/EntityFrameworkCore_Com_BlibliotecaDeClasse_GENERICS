@@ -38,6 +38,7 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
                 {
                     HttpContext.Session.SetString("IdLogado", login.Id);
                     HttpContext.Session.SetString("NomeLogado", login.Nome);
+                    // Rota para Emprestimo...
                     return RedirectToAction("Index", "Emprestimos");
                 }
                 else
