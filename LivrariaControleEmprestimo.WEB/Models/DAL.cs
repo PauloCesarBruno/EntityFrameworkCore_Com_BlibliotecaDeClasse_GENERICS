@@ -7,7 +7,7 @@ namespace LivrariaControleEmprestimo.WEB.Models
     public class DAL
     {
         public static readonly String Server = "HOME";
-        public static readonly String Database = "ControleEmprestimpLivro";
+        public static readonly String Database = "Session"; // Outro Banco
         public static readonly String User = "sa";
         public static readonly String Password = "Paradoxo22";
 
